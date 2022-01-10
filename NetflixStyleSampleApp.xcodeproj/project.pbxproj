@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A95AB426278C9203006D305F /* ContentCollectionViewRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95AB425278C9203006D305F /* ContentCollectionViewRankCell.swift */; };
 		A9E6D859278B44ED00822CD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6D858278B44ED00822CD8 /* AppDelegate.swift */; };
 		A9E6D85B278B44ED00822CD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6D85A278B44ED00822CD8 /* SceneDelegate.swift */; };
 		A9E6D862278B44EE00822CD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E6D861278B44EE00822CD8 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A95AB425278C9203006D305F /* ContentCollectionViewRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewRankCell.swift; sourceTree = "<group>"; };
 		A9E6D855278B44ED00822CD8 /* NetflixStyleSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixStyleSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E6D858278B44ED00822CD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E6D85A278B44ED00822CD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,10 +112,11 @@
 				A9E6D858278B44ED00822CD8 /* AppDelegate.swift */,
 				A9E6D85A278B44ED00822CD8 /* SceneDelegate.swift */,
 				A9E6D888278B454900822CD8 /* HomeViewController.swift */,
+				A9E6D891278B4F1700822CD8 /* ContentCollectionViewCell.swift */,
 				A9E6D893278B515000822CD8 /* ContentCollectionViewHeader.swift */,
+				A95AB425278C9203006D305F /* ContentCollectionViewRankCell.swift */,
 				A9E6D861278B44EE00822CD8 /* Assets.xcassets */,
 				A9E6D88F278B496200822CD8 /* Content.swift */,
-				A9E6D891278B4F1700822CD8 /* ContentCollectionViewCell.swift */,
 				A9E6D863278B44EE00822CD8 /* LaunchScreen.storyboard */,
 				A9E6D866278B44EE00822CD8 /* Info.plist */,
 				A9E6D88D278B491400822CD8 /* Content.plist */,
@@ -278,6 +281,7 @@
 				A9E6D859278B44ED00822CD8 /* AppDelegate.swift in Sources */,
 				A9E6D894278B515000822CD8 /* ContentCollectionViewHeader.swift in Sources */,
 				A9E6D85B278B44ED00822CD8 /* SceneDelegate.swift in Sources */,
+				A95AB426278C9203006D305F /* ContentCollectionViewRankCell.swift in Sources */,
 				A9E6D892278B4F1700822CD8 /* ContentCollectionViewCell.swift in Sources */,
 				A9E6D889278B454900822CD8 /* HomeViewController.swift in Sources */,
 				A9E6D890278B496200822CD8 /* Content.swift in Sources */,

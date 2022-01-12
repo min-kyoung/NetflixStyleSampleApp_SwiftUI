@@ -10,7 +10,7 @@ import SwiftUI
 
 class HomeViewController: UICollectionViewController {
     var contents: [Content] = []
-    var mainItem: Item?
+    var mainItem: Item? // 랜덤으로 보여질 아이템
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +63,6 @@ class HomeViewController: UICollectionViewController {
                 return self.createRankTypeSection()
             case .main:
                 return self.createMainTypeSection()
-            default:
-                return nil
             }
         }
     }

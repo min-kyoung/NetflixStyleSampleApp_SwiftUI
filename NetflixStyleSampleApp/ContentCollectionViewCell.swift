@@ -14,6 +14,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        // UICollectionViewCell의 경우 cell의 레이아웃을 표현할 때 contentView라는 기본 객체에 설정한다.
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 5
         contentView.clipsToBounds = true

@@ -14,7 +14,8 @@ struct Content: Decodable {
     let sectionName: String
     let contentItem: [Item]
     
-    enum SectionType: String, Decodable {
+    // basic, main, large, rank를 받더라도 똑같이 String으로 내뱉어 줌
+    enum SectionType: String, Decodable { 
         case basic
         case main
         case large

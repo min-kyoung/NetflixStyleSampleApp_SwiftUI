@@ -36,7 +36,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         baseStackView.distribution = .fillProportionally
         baseStackView.spacing = 5
         
-        // imageView 추가
+        // baseStackView - imageView 추가
         [imageView, descriptionLabel, contentStackView].forEach {
             baseStackView.addArrangedSubview($0)
         }
@@ -48,12 +48,12 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
             $0.height.equalTo(imageView.snp.width) // 너비와 높이가 같은 1:1의 정사각형 모양
         }
         
-        // descriptionLabel
+        // baseStackView - descriptionLabel
         descriptionLabel.font = .systemFont(ofSize: 13)
         descriptionLabel.textColor = .white
         descriptionLabel.sizeToFit()
         
-        // contentStackView
+        // baseStackView - contentStackView
         contentStackView.axis = .horizontal
         contentStackView.alignment = .center
         contentStackView.distribution = .equalCentering
@@ -90,7 +90,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         }
         btnPlay.addTarget(self, action: #selector(btnPlayTapped), for: .touchUpInside)
         
-        // 버튼 추가
+        // baseStackView - contentStackView에 버튼 추가
         [btnPlus, btnPlay, btnInfo].forEach {
             contentStackView.addArrangedSubview($0)
             
@@ -108,7 +108,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         menuStackView.distribution = .equalSpacing
         menuStackView.spacing = 20
         
-        // 버튼 추가
+        // menuStackView에 버튼 추가
         [btnTV, btnMovie, btnCategory].forEach {
             menuStackView.addArrangedSubview($0)
             $0.setTitleColor(.white, for: .normal)
@@ -126,7 +126,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         btnMovie.addTarget(self, action: #selector(btnMovieTapped), for: .touchUpInside)
         btnCategory.addTarget(self, action: #selector(btnCategoryTapped), for: .touchUpInside)
         
-        // autolayout
+        // menuStackView autolayout
         menuStackView.snp.makeConstraints {
             $0.top.equalTo(baseStackView)
             $0.leading.trailing.equalToSuperview().inset(30)

@@ -30,7 +30,7 @@ class HomeViewController: UICollectionViewController {
         
         // CollectionView Item(Cell) 설정
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
-        collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader")
+        collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader") // 헤더는 셀이 아니므로 SupplementaryView로 설정
         
         collectionView.register(ContentCollectionViewRankCell.self, forCellWithReuseIdentifier: "ContentCollectionViewRankCell")
         
@@ -43,7 +43,7 @@ class HomeViewController: UICollectionViewController {
     }
     
     func getContents() -> [Content] {
-        guard let path = Bundle.main.path(forResource: "Content", ofType: "plist"),
+        guard let path = Bundle.main.path(forResource: "Content", ofType: "plist"), // 경로
               let data = FileManager.default.contents(atPath: path),
               let list = try? PropertyListDecoder().decode([Content].self, from: data) else { return [] }
         return list

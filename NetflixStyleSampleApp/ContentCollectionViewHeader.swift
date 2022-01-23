@@ -19,7 +19,7 @@ class ContentCollectionViewHeader: UICollectionReusableView {
         
         addSubview(sectionNameLabel)
         
-        sectionNameLabel.snp.makeConstraints {
+        sectionNameLabel.snp.makeConstraints { // sectionLabel의 오토레이아웃
             $0.centerY.equalToSuperview()
             $0.top.bottom.leading.equalToSuperview().offset(10)
         }

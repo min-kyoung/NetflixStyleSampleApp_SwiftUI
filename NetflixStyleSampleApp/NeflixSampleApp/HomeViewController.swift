@@ -20,6 +20,7 @@ class HomeViewController: UICollectionViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.hidesBarsOnSwipe = true
+    
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "netflix_icon.png"), style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: nil, action: nil)
@@ -39,6 +40,8 @@ class HomeViewController: UICollectionViewController {
         
         // 생성한 layout을 CollectionView에 적용
         collectionView.collectionViewLayout = layout()
+        
+        collectionView.backgroundColor = .black
         
     }
     
@@ -223,28 +226,36 @@ extension HomeViewController {
     
     // 셀 선택
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sectionName = contents[indexPath.section].sectionName
-        print("TEST: \(sectionName)섹션의 \(indexPath.row + 1)번째 콘텐츠")
+        // 첫번째 섹션 클릭시 미리 만든 기본 화면이 표시되도록 함
+        let isFirstSection = indexPath.section == 0
+        let selectItem = isFirstSection ? mainItem
+        : contents[indexPath.section].contentItem[indexPath.row]
+        
+        let contentDetailView = ContentDetailView(item: selectItem)
+        let hostingVC = UIHostingController(rootView: contentDetailView)
+        self.show(hostingVC, sender: nil)
+        
+        
     }
 }
 
 // SwiftUI를 활용한 미리보기
 struct HomeViewController_Preview: PreviewProvider {
     static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
+        HomeViewControllerRepresentable().edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct HomeViewControllerRepresentable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        let layout = UICollectionViewLayout()
+        let homeViewController = HomeViewController(collectionViewLayout: layout)
+       
+        return UINavigationController(rootViewController: homeViewController)
+        
     }
     
-    struct Container: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            let layout = UICollectionViewLayout()
-            let homeViewController = HomeViewController(collectionViewLayout: layout)
-           
-            return UINavigationController(rootViewController: homeViewController)
-            
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-        
-        typealias UIViewControllerType = UIViewController
-    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    
+    typealias UIViewControllerType = UIViewController
 }
